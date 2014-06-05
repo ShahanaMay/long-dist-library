@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
   
+  # Routes to index page. To get all this working I needed to:
+  #
+  # 1. create the necessary html file in the right spot.
+  # 2. create the controller for any needed values.  
+  #   - defined an index method for assigning any ruby variables needed?
+  # 3. routed it where it needed to go.  In this case, that was the root route.
+  #
+  # Next up, how the hell do I handle routes that aren't the root?
   root to: "static_pages#index"
   
   # The priority is based upon order of creation: first created -> highest priority.
