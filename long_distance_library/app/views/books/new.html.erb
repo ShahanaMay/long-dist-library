@@ -1,0 +1,12 @@
+<h1>Create a new Book! :D</h1>
+
+<fieldset>
+	<%= form_for(Book.new) do |f| %>
+		Title: <%= f.text_field :title %>
+		Author: <%= f.text_field :author %>
+		<%= f.submit "Save Your Book" %>
+	<% end %>
+</fieldset>
+
+<%= link_to "Return to Books", books_path %>
+<%= link_to "back to the beginning!", root_path %>
