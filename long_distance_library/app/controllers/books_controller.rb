@@ -6,11 +6,19 @@ class BooksController < ActionController::Base
     @books = Book.all
   end
   
+  def new
+    @book = Book.new
+  end
+  
+  def edit 
+    @book = Book.find(params[:id])
+  end
+  
   def create
-    @book = Book.create(book_params)
+    @book = Book.new(book_params)
 
     if @book.save
-      redirect_to book_path, notice: "Book was successfully scheduled. Thank you!"
+      redirect_to @book, notice: "Book was successfully saved. Thank you!"
     else
       render :new, alert: "Book was not saved"
     end
@@ -23,6 +31,6 @@ class BooksController < ActionController::Base
   private
   
   def book_params
-    params.require(:title).permit(:author, :series, :isbn, :illustrator, :genre)
+    params.require(:book).permit(:title, :author, :series, :isbn, :illustrator, :genre)
   end
 end
