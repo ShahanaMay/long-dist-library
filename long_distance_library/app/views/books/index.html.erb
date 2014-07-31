@@ -5,8 +5,8 @@
 		<tr>
 			<td><%= book.title %><td>
 			<td><%= book.author %></td>
-			<td><%= button_to "Edit", {action: "edit", id: book.id } %></td>
-			<td><%= button_to "Delete", {action: "destroy", id: book.id } %></td>
+			<td><%= link_to "Edit", edit_book_path(book) %></td>
+			<td><%= button_to "Delete", book_path(book), method: "delete" %></td>
 		</tr>		
 	<% end %>
 </table>

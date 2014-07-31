@@ -1,1 +1,9 @@
-<%= @book.title %>
+<h1>Edit <%= @book.title %></h1>
+
+<fieldset>
+	<%= form_for @book do |f| %>
+		Title: <%= f.text_field :title %>
+		Author: <%= f.text_field :author %>
+		<%= f.submit "Save Your Book" %>
+	<% end %>
+</fieldset>
